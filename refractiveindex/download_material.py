@@ -29,17 +29,17 @@ def plot_nk(material, wl, n=None, k=None):
     if n is not None:
         if np.iscomplexobj(n):
             # 虽然 ri 库通常返回实数，但为了健壮性保留对复杂 n 的处理
-            plt.plot(wl, np.real(n), label="n (Real)")
+            plt.plot(wl, np.real(n), label="n", color="red")
         else:
-            plt.plot(wl, n, label="n")
+            plt.plot(wl, n, label="n", color="red")
         labels_to_plot.append("n")
         
     if k is not None:
         if np.iscomplexobj(k):
             # 同样保留对复杂 k 的处理
-            plt.plot(wl, np.real(k), label="k (Real)")
+            plt.plot(wl, np.real(k), label="k", color="blue")
         else:
-            plt.plot(wl, k, label="k")
+            plt.plot(wl, k, label="k", color="blue")
         labels_to_plot.append("k")
         
     plt.xlabel("Wavelength ($\\mu$m)")
